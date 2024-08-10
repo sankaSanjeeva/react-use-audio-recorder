@@ -1,0 +1,25 @@
+{
+  "name": "react-use-audio-recorder",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "keywords": [
+    "react",
+    "audio",
+    "voice",
+    "recorder",
+    "recording",
+    "wav"
+  ]
+}
