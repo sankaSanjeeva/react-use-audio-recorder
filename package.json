@@ -1,10 +1,14 @@
 {
   "name": "react-use-audio-recorder",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "homepage": "https://github.com/sankaSanjeeva/react-use-audio-recorder",
+  "repository": {
+    "url": "https://github.com/sankaSanjeeva/react-use-audio-recorder"
+  },
   "scripts": {
     "build": "tsup",
     "release": "pnpm run build && changeset publish",
