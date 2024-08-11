@@ -1,17 +1,29 @@
 {
   "name": "react-use-audio-recorder",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "homepage": "https://github.com/sankaSanjeeva/react-use-audio-recorder",
+  "repository": {
+    "url": "https://github.com/sankaSanjeeva/react-use-audio-recorder"
+  },
   "scripts": {
     "build": "tsup",
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
+    "@types/react": "^18.3.3",
+    "@types/recordrtc": "^5.6.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
   },
@@ -22,5 +34,8 @@
     "recorder",
     "recording",
     "wav"
-  ]
+  ],
+  "dependencies": {
+    "recordrtc": "^5.6.2"
+  }
 }

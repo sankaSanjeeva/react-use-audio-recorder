@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2022",
-    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
