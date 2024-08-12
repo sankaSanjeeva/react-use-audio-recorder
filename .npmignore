@@ -1,10 +1,10 @@
-src
-
 node_modules
-!node_modules/@types/recordrtc/index.d.ts
-!node_modules/recordrtc/RecordRTC.js
 
 .github
+.changeset
+
+src
+media
 
 tsconfig.json
 tsup.config.ts
