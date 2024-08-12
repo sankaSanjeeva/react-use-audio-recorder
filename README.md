@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sankaSanjeeva/react-use-audio-recorder/blob/main/media/repo-logo.png" alt="React-use-audio-recorder repo logo" />
+  <img src="https://raw.githubusercontent.com/sankaSanjeeva/react-use-audio-recorder/main/media/repo-logo.png" alt="React-use-audio-recorder repo logo" />
 </div>
 
 <p align="center">
