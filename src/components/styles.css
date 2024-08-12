@@ -1,0 +1,75 @@
+.audio-recorder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  background-color: #0b0b3d;
+  width: fit-content;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: monospace;
+  color: #3a4ee5;
+  font-size: 16px;
+
+  button {
+    all: unset;
+    cursor: pointer;
+    opacity: 1;
+    transition: background-color, opacity 0.5s ease;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+
+  .record-button {
+    padding: 10px;
+    border-radius: 50%;
+    background: linear-gradient(
+      45deg,
+      rgba(87, 71, 206, 1) 0%,
+      rgba(192, 13, 156, 1) 65%
+    );
+
+    &:hover {
+      background: linear-gradient(
+        45deg,
+        rgba(87, 71, 206, 1) 15%,
+        rgba(192, 13, 156, 1) 85%
+      );
+    }
+  }
+
+  .pause-resume-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3a4ee5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #4a5deb;
+    }
+  }
+
+  .stop-button {
+    padding: 4px 20px;
+    border-radius: 16px;
+    color: white;
+    background-color: #ff2965;
+
+    &:hover {
+      background-color: #e67595;
+    }
+  }
+
+  .recording-status {
+    min-width: 152px;
+    text-align: center;
+    transition: opacity 0.5s ease;
+  }
+}
