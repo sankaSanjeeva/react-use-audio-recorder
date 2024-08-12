@@ -1,4 +1,6 @@
-# React-use-audio-recorder
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sankaSanjeeva/react-use-audio-recorder/blob/main/media/repo-logo.png" alt="React-use-audio-recorder repo logo" />
+</div>
 
 <p align="center">
 React-use-audio-recorder simplifies audio recording in your React applications. Built on top of the powerful RecordRTC.js library, this provides an easy-to-use interface for capturing, managing, and interacting with audio recordings.
@@ -7,13 +9,15 @@ React-use-audio-recorder simplifies audio recording in your React applications. 
 ### Features
 
 - `useAudioRecorder` hook
-- `AudioRecorder` React component (pending)
+- `AudioRecorder` React component
 
 ### Install
 
     npm i react-use-audio-recorder
 
 ### Quick Start
+
+`useAudioRecorder` hook
 
 ```jsx
 import { useAudioRecorder } from "react-use-audio-recorder";
@@ -32,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <span>{`Recording Status${recordingStatus} - ${recordingTime} s`}</span>
+      <span>{`Recording Status - ${recordingStatus} - ${recordingTime} s`}</span>
 
       <div>
         <button
@@ -82,5 +86,16 @@ function App() {
       </div>
     </div>
   );
+}
+```
+
+`AudioRecorder` React component
+
+```jsx
+import AudioRecorder from "react-use-audio-recorder";
+import "react-use-audio-recorder/dist/index.css";
+
+function App() {
+  return <AudioRecorder onStop={(blob) => console.log(blob)} />;
 }
 ```
