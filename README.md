@@ -2,22 +2,41 @@
   <img src="https://raw.githubusercontent.com/sankaSanjeeva/react-use-audio-recorder/main/media/repo-logo.png" alt="React-use-audio-recorder repo logo" />
 </div>
 
+<br>
+
 <p align="center">
 React-use-audio-recorder simplifies audio recording in your React applications. Built on top of the powerful RecordRTC.js library, this provides an easy-to-use interface for capturing, managing, and interacting with audio recordings.
 </p>
 
-### Features
+> This package was created to address issues encountered when recording audio in React applications, specifically missing duration data in the downloaded files, which affected audio player timelines, and compatibility problems with iOS devices.
 
-- `useAudioRecorder` hook
+## Features
+
 - `AudioRecorder` React component
+- `useAudioRecorder` hook
 
-### Install
+## Install
 
     npm i react-use-audio-recorder
 
-### Quick Start
+## Quick Start
 
-`useAudioRecorder` hook
+### `AudioRecorder` React component
+
+> make sure to import styles from `react-use-audio-recorder/dist/index.css`
+
+```jsx
+import AudioRecorder from "react-use-audio-recorder";
+import "react-use-audio-recorder/dist/index.css";
+
+function App() {
+  return <AudioRecorder onStop={(blob) => console.log(blob)} />;
+}
+```
+
+To customize the styles, you can download the CSS file, make modifications, and apply the changes.
+
+### `useAudioRecorder` hook
 
 ```jsx
 import { useAudioRecorder } from "react-use-audio-recorder";
@@ -89,13 +108,4 @@ function App() {
 }
 ```
 
-`AudioRecorder` React component
-
-```jsx
-import AudioRecorder from "react-use-audio-recorder";
-import "react-use-audio-recorder/dist/index.css";
-
-function App() {
-  return <AudioRecorder onStop={(blob) => console.log(blob)} />;
-}
-```
+<p align='center'>If you find this useful, please give it a star. Thanks! ⭐</p>
