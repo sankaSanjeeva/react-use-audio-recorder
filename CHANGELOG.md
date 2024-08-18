@@ -1,5 +1,11 @@
 # react-use-audio-recorder
 
+## 0.3.1
+
+### Patch Changes
+
+- Update README.md
+
 ## 0.3.0
 
 ### Minor Changes
