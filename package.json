@@ -1,5 +1,6 @@
 {
   "name": "react-use-audio-recorder",
+  "description": "React component and hook for audio recording in your React applications",
   "license": "MIT",
   "version": "0.3.0",
   "main": "dist/index.js",

@@ -16,6 +16,7 @@ const useAudioRecorder = () => {
           type: "audio",
           recorderType: StereoAudioRecorder,
           desiredSampRate: 16000,
+          disableLogs: true,
         });
 
         recorderRef.current.startRecording();
