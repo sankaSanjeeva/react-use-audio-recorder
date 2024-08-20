@@ -60,21 +60,21 @@ function App() {
       <div>
         <button
           disabled={!(!recordingStatus || recordingStatus === "stopped")}
-          onClick={startRecording}
+          onClick={() => startRecording()}
         >
           Start
         </button>
 
         <button
           disabled={!(recordingStatus === "recording")}
-          onClick={pauseRecording}
+          onClick={() => pauseRecording()}
         >
           Pause
         </button>
 
         <button
           disabled={!(recordingStatus === "paused")}
-          onClick={resumeRecording}
+          onClick={() => resumeRecording()}
         >
           Resume
         </button>
@@ -83,7 +83,100 @@ function App() {
           disabled={
             !(recordingStatus === "recording" || recordingStatus === "paused")
           }
-          onClick={stopRecording}
+          onClick={() => stopRecording()}
+        >
+          Stop
+        </button>
+      </div>
+
+      <div>
+        <button
+          disabled={!(recordingStatus === "stopped")}
+          onClick={() => saveRecording()}
+        >
+          Save
+        </button>
+        <button
+          disabled={!(recordingStatus === "stopped")}
+          onClick={() => console.log(getBlob())}
+        >
+          Get Blob
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+### `useAudioRecorder` hook with callbacks
+
+You can optionally pass callback function to `startRecording`, `stopRecording`, `pauseRecording`, and `resumeRecording` functions to handle the recording status changes. This will help to do some task when recording is started, stopped, paused or resumed.
+The common use case is when you want to get the blob when recording is stopped.
+
+Here is complete example with callbacks.
+
+```jsx
+import { useAudioRecorder } from "react-use-audio-recorder";
+
+function App() {
+  const {
+    recordingStatus,
+    recordingTime,
+    startRecording,
+    stopRecording,
+    pauseRecording,
+    resumeRecording,
+    getBlob,
+    saveRecording,
+  } = useAudioRecorder();
+
+  return (
+    <div>
+      <span>{`Recording Status - ${recordingStatus} - ${recordingTime} s`}</span>
+
+      <div>
+        <button
+          disabled={!(!recordingStatus || recordingStatus === "stopped")}
+          onClick={() =>
+            startRecording(() => {
+              console.log("recording started");
+            })
+          }
+        >
+          Start
+        </button>
+
+        <button
+          disabled={!(recordingStatus === "recording")}
+          onClick={() =>
+            pauseRecording(() => {
+              console.log("recording paused");
+            })
+          }
+        >
+          Pause
+        </button>
+
+        <button
+          disabled={!(recordingStatus === "paused")}
+          onClick={() =>
+            resumeRecording(() => {
+              console.log("recording resumed");
+            })
+          }
+        >
+          Resume
+        </button>
+
+        <button
+          disabled={
+            !(recordingStatus === "recording" || recordingStatus === "paused")
+          }
+          onClick={() =>
+            stopRecording(() => {
+              console.log("recording stopped");
+            })
+          }
         >
           Stop
         </button>
