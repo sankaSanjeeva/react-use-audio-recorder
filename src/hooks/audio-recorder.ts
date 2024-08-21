@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import RecordRTC, { State, StereoAudioRecorder } from "recordrtc";
+import RecordRTC, { StereoAudioRecorder, State } from "recordrtc";
 
 const useAudioRecorder = () => {
   const [recordingTime, setRecordingTime] = useState(0);
@@ -8,7 +8,7 @@ const useAudioRecorder = () => {
   const intervalRef = useRef<any>(null);
   const recorderRef = useRef<any>(null);
 
-  const startRecording = (callBack?: () => void) => {
+  const startRecording = () => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then((microphone) => {
@@ -22,7 +22,6 @@ const useAudioRecorder = () => {
         recorderRef.current.startRecording();
         recorderRef.current.microphone = microphone;
         setRecordingStatus("recording");
-        callBack?.();
       })
       .catch((error) => {
         alert("Unable to access your microphone.");
@@ -30,25 +29,25 @@ const useAudioRecorder = () => {
       });
   };
 
-  const stopRecording = (callBack?: () => void) => {
-    recorderRef.current?.stopRecording(() => {
+  const stopRecording = (
+    callBack?: (blob?: Blob, blobURL?: string) => void
+  ) => {
+    recorderRef.current?.stopRecording((blobURL: string) => {
       recorderRef.current.microphone.stop();
       setRecordingStatus("stopped");
       setRecordingTime(0);
-      callBack?.();
+      callBack?.(recorderRef.current?.getBlob(), blobURL);
     });
   };
 
-  const pauseRecording = (callBack?: () => void) => {
+  const pauseRecording = () => {
     recorderRef.current?.pauseRecording();
     setRecordingStatus("paused");
-    callBack?.();
   };
 
-  const resumeRecording = (callBack?: () => void) => {
+  const resumeRecording = () => {
     recorderRef.current?.resumeRecording();
     setRecordingStatus("recording");
-    callBack?.();
   };
 
   const saveRecording = (fileName?: string) => {
