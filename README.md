@@ -83,7 +83,11 @@ function App() {
           disabled={
             !(recordingStatus === "recording" || recordingStatus === "paused")
           }
-          onClick={stopRecording}
+          onClick={() => {
+            stopRecording((blob) => {
+              console.log(blob);
+            });
+          }}
         >
           Stop
         </button>

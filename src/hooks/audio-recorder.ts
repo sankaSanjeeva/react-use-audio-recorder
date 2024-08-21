@@ -29,11 +29,14 @@ const useAudioRecorder = () => {
       });
   };
 
-  const stopRecording = () => {
-    recorderRef.current?.stopRecording(() => {
+  const stopRecording = (
+    callBack?: (blob?: Blob, blobURL?: string) => void
+  ) => {
+    recorderRef.current?.stopRecording((blobURL: string) => {
       recorderRef.current.microphone.stop();
       setRecordingStatus("stopped");
       setRecordingTime(0);
+      callBack?.(recorderRef.current?.getBlob(), blobURL);
     });
   };
 
