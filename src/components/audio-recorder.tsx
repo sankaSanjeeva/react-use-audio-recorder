@@ -114,7 +114,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
 
       <button
         className="stop-button"
-        onClick={stopRecording}
+        onClick={() => stopRecording()}
         disabled={!recordingStatus || recordingStatus === "stopped"}
       >
         Stop
