@@ -18,4 +18,4 @@ jobs:
           cache: "pnpm"
 
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm lint-staged --diff="origin/${GITHUB_BASE_REF}...origin/${GITHUB_HEAD_REF}" && pnpm run build
+      - run: pnpm run lint:types && pnpm eslint . && pnpm run build
