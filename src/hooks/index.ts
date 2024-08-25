@@ -1,1 +1,1 @@
-export { default as useAudioRecorder } from "./audio-recorder";
+export { default as useAudioRecorder } from './audio-recorder';
