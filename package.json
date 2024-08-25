@@ -3,6 +3,7 @@
   "description": "React component and hook for audio recording in your React applications",
   "license": "MIT",
   "version": "0.3.2",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -13,7 +14,9 @@
   "scripts": {
     "build": "tsup",
     "release": "pnpm run build && changeset publish",
-    "lint": "tsc"
+    "lint:types": "tsc -p tsconfig.json --noEmit",
+    "lint:eslint": "eslint . --ext .ts,.tsx,.js",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "react": ">=16.8",
@@ -29,6 +32,8 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
     "prettier": "3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
