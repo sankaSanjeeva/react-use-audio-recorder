@@ -5,6 +5,10 @@ node_modules
 
 src
 media
+.husky
 
+.prettierrc
+eslint.config.mjs
+lint-staged.config.js
 tsconfig.json
 tsup.config.ts
