@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import RecordRTC, { StereoAudioRecorder, State } from "recordrtc";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useRef, useState } from 'react';
+import RecordRTC, { StereoAudioRecorder, State } from 'recordrtc';
 
 const useAudioRecorder = () => {
   const [recordingTime, setRecordingTime] = useState(0);
@@ -13,7 +14,7 @@ const useAudioRecorder = () => {
       .getUserMedia({ audio: true })
       .then((microphone) => {
         recorderRef.current = new RecordRTC(microphone, {
-          type: "audio",
+          type: 'audio',
           recorderType: StereoAudioRecorder,
           desiredSampRate: 16000,
           disableLogs: true,
@@ -21,10 +22,10 @@ const useAudioRecorder = () => {
 
         recorderRef.current.startRecording();
         recorderRef.current.microphone = microphone;
-        setRecordingStatus("recording");
+        setRecordingStatus('recording');
       })
       .catch((error) => {
-        alert("Unable to access your microphone.");
+        alert('Unable to access your microphone.');
         console.error(error);
       });
   };
@@ -34,7 +35,7 @@ const useAudioRecorder = () => {
   ) => {
     recorderRef.current?.stopRecording((blobURL: string) => {
       recorderRef.current.microphone.stop();
-      setRecordingStatus("stopped");
+      setRecordingStatus('stopped');
       setRecordingTime(0);
       callBack?.(recorderRef.current?.getBlob(), blobURL);
     });
@@ -42,12 +43,12 @@ const useAudioRecorder = () => {
 
   const pauseRecording = () => {
     recorderRef.current?.pauseRecording();
-    setRecordingStatus("paused");
+    setRecordingStatus('paused');
   };
 
   const resumeRecording = () => {
     recorderRef.current?.resumeRecording();
-    setRecordingStatus("recording");
+    setRecordingStatus('recording');
   };
 
   const saveRecording = (fileName?: string) => {
@@ -59,13 +60,13 @@ const useAudioRecorder = () => {
   };
 
   useEffect(() => {
-    if (recordingStatus == "recording") {
+    if (recordingStatus == 'recording') {
       intervalRef.current = setInterval(() => {
         setRecordingTime((prev) => prev + 1);
       }, 1000);
     }
 
-    if (!recordingStatus || recordingStatus == "stopped") {
+    if (!recordingStatus || recordingStatus == 'stopped') {
       clearInterval(intervalRef.current!);
     }
 

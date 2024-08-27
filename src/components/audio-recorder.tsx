@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useAudioRecorder } from "../hooks";
-import { AudioRecorderProps } from "../types";
-import "./styles.css";
+import { useEffect } from 'react';
+import { useAudioRecorder } from '../hooks';
+import { AudioRecorderProps } from '../types';
+import './styles.css';
 
 export default function AudioRecorder({ onStop }: AudioRecorderProps) {
   const {
@@ -16,14 +16,14 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
   } = useAudioRecorder();
 
   useEffect(() => {
-    if (recordingStatus === "stopped") {
+    if (recordingStatus === 'stopped') {
       onStop?.(getBlob());
     }
   }, [recordingStatus]);
 
   return (
     <div className="audio-recorder">
-      {(!recordingStatus || recordingStatus === "stopped") && (
+      {(!recordingStatus || recordingStatus === 'stopped') && (
         <button className="record-button" onClick={startRecording}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
         </button>
       )}
 
-      {recordingStatus === "recording" && (
+      {recordingStatus === 'recording' && (
         <button className="record-button" onClick={pauseRecording}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
         </button>
       )}
 
-      {recordingStatus === "paused" && (
+      {recordingStatus === 'paused' && (
         <button className="record-button" onClick={resumeRecording}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
       <div
         className="recording-status"
         style={
-          recordingStatus === "recording" || recordingStatus === "paused"
+          recordingStatus === 'recording' || recordingStatus === 'paused'
             ? { opacity: 1 }
             : { opacity: 0 }
         }
@@ -97,7 +97,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
       <button
         className="pause-resume-button"
         onClick={() => saveRecording()}
-        disabled={recordingStatus !== "stopped"}
+        disabled={recordingStatus !== 'stopped'}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@ export default function AudioRecorder({ onStop }: AudioRecorderProps) {
       <button
         className="stop-button"
         onClick={() => stopRecording()}
-        disabled={!recordingStatus || recordingStatus === "stopped"}
+        disabled={!recordingStatus || recordingStatus === 'stopped'}
       >
         Stop
       </button>
