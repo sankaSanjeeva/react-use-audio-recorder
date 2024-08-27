@@ -1,5 +1,11 @@
 # react-use-audio-recorder
 
+## 0.4.0
+
+### Minor Changes
+
+- add lint
+
 ## 0.3.2
 
 ### Patch Changes
