@@ -1,5 +1,11 @@
 # react-use-audio-recorder
 
+## 0.4.1
+
+### Patch Changes
+
+- Fixed issues in package.json
+
 ## 0.4.0
 
 ### Minor Changes
