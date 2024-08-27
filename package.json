@@ -2,14 +2,14 @@
   "name": "react-use-audio-recorder",
   "description": "React component and hook for audio recording in your React applications",
   "license": "MIT",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "homepage": "https://github.com/sankaSanjeeva/react-use-audio-recorder",
   "repository": {
-    "url": "https://github.com/sankaSanjeeva/react-use-audio-recorder"
+    "url": "git+https://github.com/sankaSanjeeva/react-use-audio-recorder.git"
   },
   "scripts": {
     "build": "tsup",
