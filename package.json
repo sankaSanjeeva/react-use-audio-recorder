@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "homepage": "https://github.com/sankaSanjeeva/react-use-audio-recorder",
   "repository": {
-    "url": "https://github.com/sankaSanjeeva/react-use-audio-recorder"
+    "url": "git+https://github.com/sankaSanjeeva/react-use-audio-recorder.git"
   },
   "scripts": {
     "build": "tsup",
